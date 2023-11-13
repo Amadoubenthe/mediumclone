@@ -1,1 +1,22 @@
-<p>register works!</p>
+<div class="container">
+  <h1>Sign Up</h1>
+  <h3>Have an account ?</h3>
+
+  <form class="form" [formGroup]="form">
+    <div>Backend Errors Here</div>
+    <input
+      type="text"
+      name="username"
+      id="username"
+      formControlName="userName"
+    /><br />
+    <input type="email" name="email" id="email" formControlName="email" /><br />
+    <input
+      type="password"
+      name="password"
+      id="password"
+      formControlName="password"
+    /><br />
+    <button (click)="onSubmit()">Envoyer</button>
+  </form>
+</div>

@@ -1,0 +1,17 @@
+.container {
+  // text-align: center;
+
+  .form {
+    width: 750px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    // gap: 10px;
+  }
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+}
