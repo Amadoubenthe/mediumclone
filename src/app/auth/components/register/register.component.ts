@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { login } from '../../store/login-page.actions';
 
 @Component({
   selector: 'app-register',
@@ -15,9 +17,14 @@ export class RegisterComponent {
     password: new FormControl(''),
   });
 
-  constructor() {}
+  constructor(private store: Store) {}
 
   onSubmit() {
     console.log(this.form.value);
+
+    const username: string = this.form.value.userName as string;
+    const password: string = this.form.value.password as string;
+
+    this.store.dispatch(login({ username, password: password }));
   }
 }

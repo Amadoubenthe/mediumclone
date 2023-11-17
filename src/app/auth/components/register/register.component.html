@@ -1,22 +1,72 @@
 <div class="container">
-  <h1>Sign Up</h1>
-  <h3>Have an account ?</h3>
+  <div class="form-container">
+    <div class="left">
+      <h1>Sign Up</h1>
 
-  <form class="form" [formGroup]="form">
-    <div>Backend Errors Here</div>
-    <input
-      type="text"
-      name="username"
-      id="username"
-      formControlName="userName"
-    /><br />
-    <input type="email" name="email" id="email" formControlName="email" /><br />
-    <input
-      type="password"
-      name="password"
-      id="password"
-      formControlName="password"
-    /><br />
-    <button (click)="onSubmit()">Envoyer</button>
-  </form>
+      <p>To create & maintain your profile</p>
+      <div class="img-container">
+        <div>
+          <span class="material-symbols-outlined icon"> add_task </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="right">
+      <h2>Creat Account</h2>
+      <div class="social-network">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-facebook-messenger"></i>
+        <i class="fa-brands fa-linkedin"></i>
+      </div>
+      <form [formGroup]="form">
+        <div class="first-input">
+          <div>
+            <input
+              type="text"
+              name="username"
+              id="username"
+              placeholder="USERNAME"
+              formControlName="userName"
+            />
+          </div>
+          <div>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="E-MAIL"
+              formControlName="email"
+            />
+          </div>
+          <div>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="PASSWORD"
+              formControlName="password"
+            />
+          </div>
+        </div>
+        <div class="conditions">
+          <div>
+            <input
+              class="checkbox"
+              type="checkbox"
+              id="scales"
+              name="scales"
+              checked
+            />
+            <label for="scales"
+              >By Signing Up I Agree With <span>Terms & conditions</span></label
+            >
+          </div>
+        </div>
+        <div class="btn-container">
+          <button class="btn-sign-up" (click)="onSubmit()">Sign Up</button> or
+          <a class="btn-login" href="#">Login</a>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
