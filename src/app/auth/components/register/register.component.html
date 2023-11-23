@@ -12,7 +12,7 @@
     </div>
 
     <div class="right">
-      <h2>Creat Account</h2>
+      <h2>Creat Account {{ isSubmitting$ | async }}</h2>
       <div class="social-network">
         <i class="fa-brands fa-facebook"></i>
         <i class="fa-brands fa-facebook-messenger"></i>
@@ -63,7 +63,15 @@
           </div>
         </div>
         <div class="btn-container">
-          <button class="btn-sign-up" (click)="onSubmit()">Sign Up</button> or
+          <button
+            type="submit"
+            class="btn-sign-up"
+            (click)="onSubmit()"
+            [disabled]="isSubmitting$ | async"
+          >
+            Sign Up
+          </button>
+          or
           <a class="btn-login" href="#">Login</a>
         </div>
       </form>

@@ -9,10 +9,16 @@ const initialState: AuthState = {
   isSubmitting: false,
 };
 
-export const booksFeature = createFeature({
+export const authFeature = createFeature({
   name: 'auth',
   reducer: createReducer(
     initialState,
     on(register, (state) => ({ ...state, isSubmitting: true }))
   ),
 });
+
+export const {
+  name: authFeatureKey,
+  reducer: authReducer,
+  selectIsSubmitting,
+} = authFeature;

@@ -2,12 +2,15 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { register } from '../../store/login-page.actions';
+import { selectIsSubmitting } from '../../store/auth.reducer';
+import { AuthState } from '../../store/auth.reducer';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CommonModule],
   standalone: true,
 })
 export class RegisterComponent {
@@ -17,7 +20,9 @@ export class RegisterComponent {
     password: new FormControl(''),
   });
 
-  constructor(private store: Store) {}
+  isSubmitting$ = this.store.select(selectIsSubmitting);
+
+  constructor(private store: Store<{ auth: AuthState }>) {}
 
   onSubmit() {
     console.log(this.form.value);
