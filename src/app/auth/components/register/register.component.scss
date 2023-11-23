@@ -1,0 +1,116 @@
+$primaryColor: #1c6352;
+$secobndaryColor: #011d39;
+$autherColor: #014d4d;
+
+.container {
+  height: 100vh;
+  background: $primaryColor;
+  padding-top: 24vh;
+}
+
+.form-container {
+  width: 800px;
+  background: white;
+  margin: auto;
+  display: flex;
+  border-radius: 8px;
+
+  .left {
+    background: linear-gradient($secobndaryColor, $autherColor);
+    padding: 64px 32px 64px 32px;
+    color: #fff;
+    width: 300px;
+    border-radius: 5px;
+
+    h1 {
+      font-size: 3rem;
+    }
+
+    p {
+      padding-top: 16px;
+      font-size: 0.9rem;
+    }
+
+    .img-container {
+      padding-top: 50px;
+      padding-bottom: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .icon {
+      color: $primaryColor;
+      font-size: 8rem;
+    }
+  }
+
+  .right {
+    padding: 64px 32px 64px 64px;
+
+    h2 {
+      padding-top: 0.5rem;
+      font-size: 2.5rem;
+    }
+
+    .social-network {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      padding-right: 80px;
+      padding-top: 8px;
+    }
+
+    i {
+      font-size: 1.5rem;
+    }
+
+    form {
+      padding-right: 32px;
+    }
+
+    form .first-input {
+      padding: 24px 16px 45px 0;
+    }
+
+    .first-input input {
+      border: none;
+      outline: none;
+      border-bottom: 1px solid black;
+      padding: 16px 0;
+      width: 320px;
+    }
+
+    .conditions label {
+      font-size: 0.7rem;
+      font-weight: bold;
+    }
+
+    .conditions span {
+      color: $primaryColor;
+    }
+
+    .conditions div {
+      display: flex;
+      gap: 8px;
+    }
+
+    .btn-container {
+      padding-top: 24px;
+    }
+
+    .btn-sign-up {
+      background: $secobndaryColor;
+      color: #fff;
+      padding: 10px 32px;
+      border: none;
+      outline: none;
+      border-radius: 8px;
+    }
+
+    .btn-login {
+      text-decoration: none;
+      color: $primaryColor;
+    }
+  }
+}

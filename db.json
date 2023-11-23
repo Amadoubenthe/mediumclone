@@ -1,0 +1,39 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "John Doe",
+      "email": "john@example.com",
+      "password": "12345678"
+    },
+    {
+      "userName": "amadbenthebagnandiallo@gmail.com",
+      "email": "admin@infisoftware.net",
+      "password": "123456789",
+      "id": 2
+    },
+    {
+      "userName": "",
+      "email": "",
+      "password": "",
+      "id": 3
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
