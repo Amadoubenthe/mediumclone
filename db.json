@@ -5,6 +5,18 @@
       "username": "John Doe",
       "email": "john@example.com",
       "password": "12345678"
+    },
+    {
+      "userName": "amadbenthebagnandiallo@gmail.com",
+      "email": "admin@infisoftware.net",
+      "password": "123456789",
+      "id": 2
+    },
+    {
+      "userName": "",
+      "email": "",
+      "password": "",
+      "id": 3
     }
   ],
   "posts": [

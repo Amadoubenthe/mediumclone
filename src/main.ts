@@ -7,9 +7,11 @@ import { reducers, metaReducers } from './app/reducers';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { isDevMode } from '@angular/core';
 import { authFeatureKey, authReducer } from './app/auth/store/auth.reducer';
+import { provideHttpClient } from '@angular/common/http';
 
 bootstrapApplication(AppComponent, {
   providers: [
+    provideHttpClient(),
     provideRouter(appRoutes),
     provideStore(reducers, { metaReducers }),
     provideState(authFeatureKey, authReducer),
