@@ -1,5 +1,5 @@
 import { createFeature, createReducer, on } from '@ngrx/store';
-import { register } from './login-page.actions';
+import { authActions } from './auth.actions';
 
 export interface AuthState {
   isSubmitting: boolean;
@@ -13,7 +13,10 @@ export const authFeature = createFeature({
   name: 'auth',
   reducer: createReducer(
     initialState,
-    on(register, (state) => ({ ...state, isSubmitting: true }))
+    on(authActions.registerRequest, (state) => ({
+      ...state,
+      isSubmitting: true,
+    }))
   ),
 });
 
