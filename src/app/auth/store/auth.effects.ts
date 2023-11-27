@@ -2,17 +2,18 @@ import { Injectable, inject } from '@angular/core';
 import { EMPTY, of } from 'rxjs';
 import { map, exhaustMap, catchError, switchMap } from 'rxjs/operators';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { AuthService, User } from '../sevices/auth.service';
+import { AuthService } from '../sevices/auth.service';
 import { authActions } from './auth.actions';
+import { UserRequest } from 'src/app/shared/types/user-request';
 
 export const registerEffect = createEffect(
   (ations$ = inject(Actions), authervice = inject(AuthService)) => {
     return ations$.pipe(
       ofType(authActions.registerRequest),
-      switchMap((request) => {
+      switchMap((request: UserRequest) => {
         return authervice.register(request).pipe(
-          map((user: User) => {
-            return authActions.registerSuccess(user);
+          map((message) => {
+            return authActions.registerSuccess(message);
           }),
           catchError(() => {
             return of(authActions.registerFailure({ error: 'Error ...' }));
@@ -23,23 +24,3 @@ export const registerEffect = createEffect(
   },
   { functional: true }
 );
-
-// @Injectable()
-// export class MoviesEffects {
-//   loadMovies$ = createEffect(() =>
-//     this.actions$.pipe(
-//       ofType('[Movies Page] Load Movies'),
-//       exhaustMap(() =>
-//         this.authService.register().pipe(
-//           map((movies) => ({
-//             type: '[Movies API] Movies Loaded Success',
-//             payload: movies,
-//           })),
-//           catchError(() => EMPTY)
-//         )
-//       )
-//     )
-//   );
-
-//   constructor(private actions$: Actions, private authService: AuthService) {}
-// }

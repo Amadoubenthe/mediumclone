@@ -4,13 +4,13 @@ import {
   emptyProps,
   props,
 } from '@ngrx/store';
-import { User } from '../sevices/auth.service';
+import { UserRequest } from 'src/app/shared/types/user-request';
 
 export const authActions = createActionGroup({
   source: 'Auth',
   events: {
-    'Register Request': props<User>(),
-    'Register Success': props<User>(),
+    'Register Request': props<UserRequest>(),
+    'Register Success': props<{ message: string }>(),
     'Register Failure': props<{ error: string }>(),
 
     // defining events with payload using the `props` function

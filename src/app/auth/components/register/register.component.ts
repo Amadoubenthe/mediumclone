@@ -4,8 +4,8 @@ import { Store } from '@ngrx/store';
 import { selectIsSubmitting } from '../../store/auth.reducer';
 import { AuthState } from '../../store/auth.reducer';
 import { CommonModule } from '@angular/common';
-import { User } from '../../sevices/auth.service';
 import { authActions } from '../../store/auth.actions';
+import { UserRequest } from 'src/app/shared/types/user-request';
 
 @Component({
   selector: 'app-register',
@@ -26,9 +26,14 @@ export class RegisterComponent {
   constructor(private store: Store<{ auth: AuthState }>) {}
 
   onSubmit() {
-    const user: User = {
-      ...this.form.value,
-    } as User;
+    const user: UserRequest = {
+      email: this.form.value.email as string,
+      firstName: this.form.value.userName as string,
+      lastName: 'Amadou',
+      password: this.form.value.password as string,
+      phone: '0584108716',
+      roleId: 1,
+    };
 
     this.store.dispatch(authActions.registerRequest(user));
   }
