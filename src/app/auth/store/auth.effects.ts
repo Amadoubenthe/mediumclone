@@ -8,6 +8,7 @@ import { UserRequest } from 'src/app/shared/types/user-request';
 import { AuthService } from '../services/auth.service';
 import { CreatedSuccessMessage } from 'src/app/shared/types/created-success-message';
 import { HttpErrorResponse } from '@angular/common/http';
+import { PersistanceService } from 'src/app/shared/services/persistance.service';
 
 export const registerEffect = createEffect(
   (ations$ = inject(Actions), authervice = inject(AuthService)) => {
