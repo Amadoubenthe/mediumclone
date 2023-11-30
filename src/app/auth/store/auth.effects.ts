@@ -1,10 +1,11 @@
-import { Injectable, inject } from '@angular/core';
-import { EMPTY, of } from 'rxjs';
-import { map, exhaustMap, catchError, switchMap } from 'rxjs/operators';
+import { inject } from '@angular/core';
+import { of } from 'rxjs';
+import { map, catchError, switchMap } from 'rxjs/operators';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { AuthService } from '../sevices/auth.service';
+
 import { authActions } from './auth.actions';
 import { UserRequest } from 'src/app/shared/types/user-request';
+import { AuthService } from '../services/auth.service';
 
 export const registerEffect = createEffect(
   (ations$ = inject(Actions), authervice = inject(AuthService)) => {

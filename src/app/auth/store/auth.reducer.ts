@@ -1,12 +1,12 @@
 import { createFeature, createReducer, on } from '@ngrx/store';
 import { authActions } from './auth.actions';
-
-export interface AuthState {
-  isSubmitting: boolean;
-}
+import { AuthState } from 'src/app/shared/types/auth-state';
 
 const initialState: AuthState = {
   isSubmitting: false,
+  isLoading: false,
+  token: null,
+  validationErrors: null,
 };
 
 export const authFeature = createFeature({

@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { selectIsSubmitting } from '../../store/auth.reducer';
-import { AuthState } from '../../store/auth.reducer';
 import { CommonModule } from '@angular/common';
 import { authActions } from '../../store/auth.actions';
 import { UserRequest } from 'src/app/shared/types/user-request';
+import { AuthState } from 'src/app/shared/types/auth-state';
 
 @Component({
   selector: 'app-register',
