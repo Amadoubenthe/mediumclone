@@ -1,3 +1,3 @@
 export interface BackenErrors {
-  message: string;
+  [key: string]: string;
 }

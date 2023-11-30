@@ -1,6 +1,7 @@
 $primaryColor: #1c6352;
 $secobndaryColor: #011d39;
 $autherColor: #014d4d;
+$errorColor: #dd0031;
 
 .container {
   height: 100vh;
@@ -47,6 +48,13 @@ $autherColor: #014d4d;
 
   .right {
     padding: 64px 32px 64px 64px;
+
+    .error-container {
+      border-radius: 8px;
+      padding: 8px;
+      background: $errorColor;
+      color: white;
+    }
 
     h2 {
       padding-top: 0.5rem;
