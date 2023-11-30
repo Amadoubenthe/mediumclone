@@ -8,6 +8,8 @@ import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { isDevMode } from '@angular/core';
 import { authFeatureKey, authReducer } from './app/auth/store/auth.reducer';
 import { provideHttpClient } from '@angular/common/http';
+import { provideEffects } from '@ngrx/effects';
+import * as authEffects from './app/auth/store/auth.effects';
 
 bootstrapApplication(AppComponent, {
   providers: [
@@ -15,6 +17,7 @@ bootstrapApplication(AppComponent, {
     provideRouter(appRoutes),
     provideStore(reducers, { metaReducers }),
     provideState(authFeatureKey, authReducer),
+    provideEffects(authEffects),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
   ],
 });

@@ -17,6 +17,13 @@
       "email": "",
       "password": "",
       "id": 3
+    },
+    {
+      "userName": "diallspvie",
+      "email": "mkisssi@test.com",
+      "password": "12345",
+      "type": "[Auth] Register Request",
+      "id": 4
     }
   ],
   "posts": [
